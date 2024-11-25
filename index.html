@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product CRUD</title>
+  <style>
+    /* --------- Estilo Geral --------- */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa; /* Fundo claro */
+      color: #212529; /* Texto escuro */
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #007bff; /* Azul primário */
+      font-size: 2.5em;
+      font-weight: 700;
+    }
+
+    /* --------- Formulários --------- */
+    form {
+      background-color: #ffffff; /* Fundo branco */
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    form h2 {
+      margin-bottom: 20px;
+      color: #007bff; /* Azul primário */
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      font-size: 0.95em;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    textarea:focus {
+      border-color: #007bff; /* Azul primário */
+      outline: none;
+      box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3; /* Azul mais escuro */
+    }
+
+    /* --------- Lista de Produtos --------- */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 30px auto;
+      max-width: 700px;
+    }
+
+    ul li {
+      background: #ffffff;
+      margin: 10px 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ul li strong {
+      color: #007bff; /* Azul primário */
+      font-weight: 600;
+    }
+
+    /* Botões dentro da lista de produtos */
+    .product-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .product-buttons button {
+      padding: 8px 12px;
+      font-size: 0.9em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .delete-button {
+      background-color: #dc3545; /* Vermelho */
+      color: #ffffff;
+    }
+
+    .delete-button:hover {
+      background-color: #b02a37; /* Vermelho mais escuro */
+    }
+
+    .update-button {
+      background-color: #28a745; /* Verde */
+      color: #ffffff;
+    }
+
+    .update-button:hover {
+      background-color: #218838; /* Verde mais escuro */
+    }
+  </style>
+</head>
+<body>
+  <h1>Product CRUD</h1>
+
+  <!-- Add Product Form -->
+  <form id="add-product-form">
+    <h2>Add New Product</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required step="0.01">
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="3" required></textarea>
+    <button type="submit">Add Product</button>
+  </form>
+
+  <!-- Product List -->
+  <ul id="products"></ul>
+
+  <!-- JavaScript -->
+  <script src="back.js"></script>
+  <script src="app2.js"></script>
+</body>
+</html>
